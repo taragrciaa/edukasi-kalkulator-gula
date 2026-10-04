@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GulaGuard – Edukasi & Monitoring Gula</title>
+<meta name="theme-color" content="#ff5c9d">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top glass"><b class="logo">🍬 GulaGuard</b><nav id="dnav"></nav></header>
+<main>
+  <section id="faktapedia" class="tab">
+    <div class="hero c">
+      <div class="big">50 g<small>≈ 4 sdm / hari</small></div>
+      <p>Batas maksimal gula tambahan per hari menurut Kemenkes RI & WHO. Satu boba bisa menghabiskan hampir semuanya.</p>
+    </div>
+    <h2>Tahukah Kamu? <small>(tap kartu)</small></h2>
+    <div id="cards" class="grid"></div>
+    <h2>Bahaya Gula Berlebih</h2>
+    <div id="danger" class="grid"></div>
+    <h2>Mitos vs Fakta</h2>
+    <div id="myths"></div>
+    <h2>Craving Hacks</h2>
+    <div id="hacks" class="grid"></div>
+  </section>
+
+  <section id="kalkulator" class="tab">
+    <h2>Kalkulator Gula Harian</h2>
+    <form id="cf" class="c pad">
+      <label>Usia (tahun)<input id="age" type="number" min="10" max="90" value="20" required></label>
+      <label>Jenis kelamin<select id="sex"><option value="m">Laki-laki</option><option value="f">Perempuan</option></select></label>
+      <label>Berat badan (kg)<input id="wt" type="number" min="25" max="200" value="55" required></label>
+      <label>Aktivitas harian<select id="act"><option value="1.2">Santai (rebahan, kuliah/kerja duduk)</option><option value="1.375" selected>Ringan (jalan, olahraga 1-3x/minggu)</option><option value="1.55">Aktif (olahraga 4-5x/minggu)</option><option value="1.725">Sangat aktif (atlet)</option></select></label>
+      <button class="btn">Hitung batas gulaku</button>
+    </form>
+    <div id="cr"></div>
+  </section>
+
+  <section id="lens" class="tab">
+    <h2>📸 Gula Lens</h2>
+    <p class="muted">Foto makanan atau minuman apa saja, lalu lihat estimasi gula dan cara membakarnya.</p>
+    <label id="drop" class="c drop">
+      <span class="emo">📷</span><b>Seret foto ke sini atau pilih dari galeri</b>
+      <input id="gal" type="file" accept="image/*" hidden>
+    </label>
+    <label class="btn alt">📱 Ambil foto dengan kamera<input id="cam" type="file" accept="image/*" capture="environment" hidden></label>
+    <div id="pw" class="pw" hidden><img id="prev" alt="Foto makanan"><i class="laser"></i></div>
+    <div id="lr"></div>
+    <details class="c pad"><summary>Aktifkan Gemini Vision (opsional)</summary>
+      <input id="key" type="password" placeholder="Tempel Gemini API Key (disimpan di perangkatmu)">
+      <small class="muted">Kosong = simulator demo yang menebak dari warna foto.</small>
+    </details>
+  </section>
+
+  <section id="kuliner" class="tab">
+    <h2>🍱 Database Kuliner Indo</h2>
+    <input id="q" class="search" type="search" placeholder="Cari klepon, boba, soda…">
+    <div id="pills" class="pills"></div>
+    <div id="fg" class="grid"></div>
+  </section>
+
+  <section id="hydration" class="tab">
+    <h2>💧 Hydration Tracker</h2>
+    <div class="c pad hy">
+      <div class="glassbox"><div id="water" class="water"><i class="wv"></i><i class="wv w2"></i></div><b id="pct">0%</b></div>
+      <div>
+        <label>Berat badan (kg)<input id="hw" type="number" min="25" max="200" value="55"></label>
+        <p id="ht"></p>
+        <div id="gb" class="gl"></div>
+        <button id="hr" class="btn alt">Reset hari ini</button>
+      </div>
+    </div>
+  </section>
+</main>
+<nav id="bnav" class="glass"></nav>
+<div id="modal" class="modal" hidden><div class="c pad mc"><button id="mx" class="x" aria-label="Tutup">✕</button><div id="mb"></div></div></div>
+<script src="app.js"></script>
+</body>
+</html>

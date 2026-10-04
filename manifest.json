@@ -1,0 +1,14 @@
+{
+  "name": "GulaGuard – Edukasi & Monitoring Gula",
+  "short_name": "GulaGuard",
+  "description": "Edukasi gula, kalkulator, Gula Lens, kuliner Indonesia, dan hydration tracker.",
+  "lang": "id",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffe4f1",
+  "theme_color": "#ff5c9d",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
